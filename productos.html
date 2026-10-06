@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos y Servicios - Mi Emprendimiento / My Business</title>
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <h1>PANCHOCODE</h1>
+        <p class="slogan">Proyecto Interdisciplinario: Taller de Informática + Inglés</p>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="proyecto.html">El Proyecto</a></li>
+                <li><a href="productos.html">Productos y Servicios</a></li>
+                <li><a href="carrito.html" id="link-carrito">Carrito <span id="contador-nav"></span></a></li>
+                <li><a href="info.html">Info</a></li>
+                <li><a href="galeria.html">Galería</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="conclusion.html">Conclusión</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="catalogo">
+            <h2>Nuestros productos y servicios / Our products and services</h2>
+            <p>Catalogo de comidas rapidas / Fast food catalog</p>
+
+            <!-- BUSCADOR: filtra las fichas de abajo mientras el usuario escribe. No hace falta tocar esto. -->
+            <div class="buscador">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" id="input-buscar" placeholder="Buscar producto... / Search product...">
+            </div>
+
+            <!-- TAREA: Completá cada ficha con nombre, precio en pesos, descripción bilingüe e imagen. -->
+            <!-- IMPORTANTE: el atributo data-nombre y data-precio-ars son los que usa el carrito y el buscador. -->
+            <!-- data-precio-ars debe ser SOLO UN NÚMERO (sin $, sin puntos de miles, sin texto). -->
+            <!-- El precio en dólares NO se carga a mano: lo calcula solo el sitio usando la cotización -->
+            <!-- del dólar blue que van a cargar en el Paso 6 de la guía (variable en js/script.js). -->
+            <!-- Podés agregar más fichas copiando el bloque completo <div class="tarjeta-producto">...</div> -->
+            <div class="grid-tarjetas">
+
+                <div class="tarjeta-producto" data-nombre="Pancho" data-precio-ars="2000">
+                    <!-- TAREA (opcional): si este producto está en oferta, dejá esta etiqueta. Si no, borrala. -->
+                    <span class="etiqueta etiqueta-oferta">Oferta / Sale</span>
+                    <img src="https://i.imgur.com/H0NtQAm.png" alt="Pancho" >
+                    <h3>Pancho </h3>
+                    <p class="precio">$ 2.000 ARS <span class="precio-usd-auto"></span></p>
+                    <p><b>ES:</b> Los panchos de PanchoCode están preparados con salchichas y pan, acompañados de diferentes ingredientes y salsas. Ofrecemos varias combinaciones para que los clientes puedan elegir según sus gustos.</p>
+                    <br>
+                    <p><b>EN:</b> PanchoCode’s hot dogs are made with sausages and bread, accompanied by different ingredients and sauces. We offer several combinations so customers can choose according to their tastes.</p>
+
+                    <div class="selector-cantidad">
+                        <label>Cantidad / Quantity:</label>
+                        <button class="btn-cantidad" data-accion="restar">−</button>
+                        <input type="number" class="input-cantidad" value="1" min="1">
+                        <button class="btn-cantidad" data-accion="sumar">+</button>
+                    </div>
+
+                    <button class="boton-agregar">Agregar al carrito / Add to cart</button>
+                </div>
+
+                <div class="tarjeta-producto" data-nombre="Hamburgesas" data-precio-ars="4600">
+                    <!-- TAREA (opcional): si quedan pocas unidades de este producto, dejá esta etiqueta. Si no, borrala. -->
+                    <span class="etiqueta etiqueta-stock">Últimas unidades / Few left</span>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXaWcizMuHTt8qOj_jQViXHyIUvw0tgejYi0bAVhlCNfKvUYQ6JUyqr4lr&s=10" alt="Hamburguesa Casera">
+                    <h3>Hamburguesas</h3>
+                    <p class="precio">$ 4.600 ARS <span class="precio-usd-auto"></span></p>
+                    <p><b>ES:</b> Las hamburguesas de PanchoCode están preparadas con pan y un medallón de carne, acompañadas de queso, vegetales, salsas y otros ingredientes según la combinación elegida.</p>
+                    <br>
+                    <p><b>EN:</b> PanchoCode’s hamburgers are made with a bun and a beef patty, accompanied by cheese, vegetables, sauces, and other ingredients depending on the chosen combination.</p>
+
+                    <div class="selector-cantidad">
+                        <label>Cantidad / Quantity:</label>
+                        <button class="btn-cantidad" data-accion="restar">−</button>
+                        <input type="number" class="input-cantidad" value="1" min="1">
+                        <button class="btn-cantidad" data-accion="sumar">+</button>
+                    </div>
+
+                    <button class="boton-agregar">Agregar al carrito / Add to cart</button>
+                </div>
+
+                <div class="tarjeta-producto" data-nombre="Pizzas" data-precio-ars="5000">
+                   <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvM-lT_fsy2Ze7hB085GlawecYS0NzJ_itmQa3lRW9qphWB851EBOW25I&s=10" alt="Pizza Casera" >
+                    <h3>Pizzas</h3>
+                    <p class="precio">$ 5.000 ARS <span class="precio-usd-auto"></span></p>
+                    <p><b>ES:</b> Las pizzas de PanchoCode están elaboradas con masa, salsa de tomate y queso, y pueden incluir diferentes ingredientes según la variedad elegida.</p>
+                    <br>
+                    <p><b>EN:</b> PanchoCode’s pizzas are made with dough, tomato sauce, and cheese, and can include different toppings depending on the variety chosen.</p>
+
+                    <div class="selector-cantidad">
+                        <label>Cantidad / Quantity:</label>
+                        <button class="btn-cantidad" data-accion="restar">−</button>
+                        <input type="number" class="input-cantidad" value="1" min="1">
+                        <button class="btn-cantidad" data-accion="sumar">+</button>
+                    </div>
+
+                    <button class="boton-agregar">Agregar al carrito / Add to cart</button>
+                </div>
+
+            </div>
+
+            <p id="sin-resultados">No se encontraron productos con ese nombre. / No products found with that name.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 Proyecto Interdisciplinario — Taller de Informática e Inglés</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
